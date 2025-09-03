@@ -3,7 +3,9 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\UserRole;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -20,6 +22,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role',
         'password',
     ];
 
@@ -43,6 +46,47 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'role' => UserRole::class,
         ];
+    }
+
+    /**
+     * Check if user is an admin
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role === UserRole::ADMIN;
+    }
+
+    /**
+     * Check if user is an applicant
+     */
+    public function isApplicant(): bool
+    {
+        return $this->role === UserRole::APPLICANT;
+    }
+
+    /**
+     * Scope to get only admin users
+     */
+    public function scopeAdmins($query)
+    {
+        return $query->where('role', UserRole::ADMIN);
+    }
+
+    /**
+     * Scope to get only applicant users
+     */
+    public function scopeApplicants($query)
+    {
+        return $query->where('role', UserRole::APPLICANT);
+    }
+
+    /**
+     * Get all forms submitted by this user
+     */
+    public function forms(): HasMany
+    {
+        return $this->hasMany(Form::class);
     }
 }

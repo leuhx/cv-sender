@@ -28,10 +28,50 @@ export interface User {
     id: number;
     name: string;
     email: string;
+    role: 'admin' | 'applicant';
     avatar?: string;
     email_verified_at: string | null;
     created_at: string;
     updated_at: string;
+}
+
+export interface Form {
+    id: number;
+    user_id: number;
+    name: string;
+    email: string;
+    position: string;
+    education: string;
+    observations: string | null;
+    cv_path: string | null;
+    created_at: string;
+    updated_at: string;
+    user?: User;
+}
+
+export interface EditForm {
+    id: number;
+    name: string;
+    email: string;
+    position: string;
+    education: string;
+    observations: string | null;
+    cv_path: string | null;
+}
+
+export interface PaginatedForms {
+    data: Form[];
+    current_page: number;
+    last_page: number;
+    per_page: number;
+    total: number;
+    from: number;
+    to: number;
+    links: {
+        url: string | null;
+        label: string;
+        active: boolean;
+    }[];
 }
 
 export type BreadcrumbItemType = BreadcrumbItem;
