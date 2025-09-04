@@ -40,7 +40,7 @@ class FormController extends Controller
     {
         $validEducationLevels = [
             'Ensino Fundamental',
-            'Ensino Médio', 
+            'Ensino Médio',
             'Técnico em Informática',
             'Tecnólogo em Análise e Desenvolvimento de Sistemas',
             'Curso Superior de Tecnologia em Redes de Computadores',
@@ -128,7 +128,7 @@ class FormController extends Controller
 
         $validEducationLevels = [
             'Ensino Fundamental',
-            'Ensino Médio', 
+            'Ensino Médio',
             'Técnico em Informática',
             'Tecnólogo em Análise e Desenvolvimento de Sistemas',
             'Curso Superior de Tecnologia em Redes de Computadores',
