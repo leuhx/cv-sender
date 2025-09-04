@@ -221,7 +221,7 @@ class FormControllerTest extends TestCase
             'email' => 'updated@example.com',
             'phone' => '+55 11 88888-8888',
             'position' => 'Updated Position',
-            'education' => 'Updated Education',
+            'education' => 'Mestrado',
             'observations' => 'Updated observations',
             '_method' => 'PATCH'
         ];
@@ -237,7 +237,7 @@ class FormControllerTest extends TestCase
             'email' => 'updated@example.com',
             'phone' => '+55 11 88888-8888',
             'position' => 'Updated Position',
-            'education' => 'Updated Education',
+            'education' => 'Mestrado',
             'observations' => 'Updated observations'
         ]);
     }
@@ -261,7 +261,7 @@ class FormControllerTest extends TestCase
             'name' => 'Updated Name',
             'email' => 'updated@example.com',
             'position' => 'Updated Position',
-            'education' => 'Updated Education',
+            'education' => 'Doutorado',
             'cv_file' => $newCvFile,
             '_method' => 'PATCH'
         ];

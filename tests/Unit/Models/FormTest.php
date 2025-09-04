@@ -183,7 +183,7 @@ class FormTest extends TestCase
             'email' => 'test@example.com',
             'phone' => '+55 11 98765-4321',
             'position' => 'Test Position',
-            'education' => 'Test Education',
+            'education' => 'Ensino Médio',
             'observations' => 'Test Observations',
             'cv_path' => 'test/path.pdf'
         ]);
@@ -193,7 +193,7 @@ class FormTest extends TestCase
         $this->assertEquals('test@example.com', $form->email);
         $this->assertEquals('+55 11 98765-4321', $form->phone);
         $this->assertEquals('Test Position', $form->position);
-        $this->assertEquals('Test Education', $form->education);
+        $this->assertEquals('Ensino Médio', $form->education);
         $this->assertEquals('Test Observations', $form->observations);
         $this->assertEquals('test/path.pdf', $form->cv_path);
     }

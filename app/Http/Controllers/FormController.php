@@ -38,12 +38,26 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
+        $validEducationLevels = [
+            'Ensino Fundamental',
+            'Ensino Médio', 
+            'Técnico em Informática',
+            'Tecnólogo em Análise e Desenvolvimento de Sistemas',
+            'Curso Superior de Tecnologia em Redes de Computadores',
+            'Bacharelado em Ciência da Computação',
+            'Bacharelado em Sistemas de Informação',
+            'Bacharelado em Engenharia de Software',
+            'Pós-graduação/Especialização',
+            'Mestrado',
+            'Doutorado'
+        ];
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:20',
             'position' => 'required|string|max:255',
-            'education' => 'required|string|max:255',
+            'education' => 'required|string|in:' . implode(',', $validEducationLevels),
             'observations' => 'nullable|string',
             'cv_file' => 'required|file|mimes:pdf,doc,docx|max:5120', // 5MB max
         ]);
@@ -58,10 +72,10 @@ class FormController extends Controller
             'user_id' => Auth::id(),
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'phone' => $validated['phone'],
+            'phone' => $validated['phone'] ?? null,
             'position' => $validated['position'],
             'education' => $validated['education'],
-            'observations' => $validated['observations'],
+            'observations' => $validated['observations'] ?? null,
             'cv_path' => $cvPath,
         ]);
 
@@ -112,12 +126,26 @@ class FormController extends Controller
             abort(403, 'Você não tem permissão para editar este formulário.');
         }
 
+        $validEducationLevels = [
+            'Ensino Fundamental',
+            'Ensino Médio', 
+            'Técnico em Informática',
+            'Tecnólogo em Análise e Desenvolvimento de Sistemas',
+            'Curso Superior de Tecnologia em Redes de Computadores',
+            'Bacharelado em Ciência da Computação',
+            'Bacharelado em Sistemas de Informação',
+            'Bacharelado em Engenharia de Software',
+            'Pós-graduação/Especialização',
+            'Mestrado',
+            'Doutorado'
+        ];
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:20',
             'position' => 'required|string|max:255',
-            'education' => 'required|string|max:255',
+            'education' => 'required|string|in:' . implode(',', $validEducationLevels),
             'observations' => 'nullable|string',
             'cv_file' => 'nullable|file|mimes:pdf,doc,docx|max:5120',
         ]);

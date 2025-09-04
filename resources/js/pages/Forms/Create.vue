@@ -133,14 +133,25 @@ const submit = () => {
                             <label for="education" class="block text-sm font-medium text-foreground mb-2">
                                 Formação Acadêmica *
                             </label>
-                            <input
+                            <select
                                 id="education"
                                 v-model="form.education"
-                                type="text"
                                 required
-                                class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
-                                placeholder="Ex: Bacharelado em Ciência da Computação"
-                            />
+                                class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
+                            >
+                                <option value="">Selecione sua formação</option>
+                                <option value="Ensino Fundamental">Ensino Fundamental</option>
+                                <option value="Ensino Médio">Ensino Médio</option>
+                                <option value="Técnico em Informática">Técnico em Informática</option>
+                                <option value="Tecnólogo em Análise e Desenvolvimento de Sistemas">Tecnólogo em Análise e Desenvolvimento de Sistemas</option>
+                                <option value="Curso Superior de Tecnologia em Redes de Computadores">Curso Superior de Tecnologia em Redes de Computadores</option>
+                                <option value="Bacharelado em Ciência da Computação">Bacharelado em Ciência da Computação</option>
+                                <option value="Bacharelado em Sistemas de Informação">Bacharelado em Sistemas de Informação</option>
+                                <option value="Bacharelado em Engenharia de Software">Bacharelado em Engenharia de Software</option>
+                                <option value="Pós-graduação/Especialização">Pós-graduação/Especialização</option>
+                                <option value="Mestrado">Mestrado</option>
+                                <option value="Doutorado">Doutorado</option>
+                            </select>
                             <div v-if="form.errors.education" class="mt-1 text-sm text-red-600">
                                 {{ form.errors.education }}
                             </div>

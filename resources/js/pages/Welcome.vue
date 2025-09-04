@@ -7,8 +7,8 @@ import { dashboard } from '@/routes';
     <div class="relative min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
         <!-- Header -->
         <div class="absolute top-0 right-0 p-6">
-            <Link 
-                :href="dashboard()" 
+            <Link
+                :href="dashboard()"
                 class="text-sm text-gray-700 hover:text-blue-600 underline decoration-2 underline-offset-4"
             >
                 Dashboard
@@ -37,7 +37,7 @@ import { dashboard } from '@/routes';
                                     <div class="w-3/5 h-1 bg-gray-200 rounded"></div>
                                 </div>
                             </div>
-                            
+
                             <!-- Secondary document (shadow effect) -->
                             <div class="absolute -top-2 -right-2 w-24 h-32 bg-white border-2 border-gray-200 rounded-lg shadow-md -z-10 rotate-3"></div>
                         </div>
@@ -47,7 +47,7 @@ import { dashboard } from '@/routes';
                         CV <span class="text-blue-600">Sender</span>
                     </h1>
                     <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                        A plataforma moderna para gerenciar e enviar currículos de forma profissional. 
+                        A plataforma moderna para gerenciar e enviar currículos de forma profissional.
                         Simplifique seu processo de recrutamento com nossa solução integrada.
                     </p>
                 </div>
@@ -87,8 +87,8 @@ import { dashboard } from '@/routes';
 
                 <!-- CTA Section -->
                 <div class="text-center">
-                    <Link 
-                        :href="dashboard()" 
+                    <Link
+                        :href="dashboard()"
                         class="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
                     >
                         Acessar Plataforma

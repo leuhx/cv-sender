@@ -41,12 +41,17 @@ class FormFactory extends Factory
                 'DevOps Engineer'
             ]),
             'education' => fake()->randomElement([
+                'Ensino Fundamental',
+                'Ensino Médio',
+                'Técnico em Informática',
+                'Tecnólogo em Análise e Desenvolvimento de Sistemas',
+                'Curso Superior de Tecnologia em Redes de Computadores',
                 'Bacharelado em Ciência da Computação',
                 'Bacharelado em Sistemas de Informação',
-                'Tecnólogo em Análise e Desenvolvimento de Sistemas',
                 'Bacharelado em Engenharia de Software',
-                'Técnico em Informática',
-                'Curso Superior de Tecnologia em Redes de Computadores'
+                'Pós-graduação/Especialização',
+                'Mestrado',
+                'Doutorado'
             ]),
             'observations' => fake()->optional()->paragraph(),
             'cv_path' => 'cvs/' . fake()->uuid() . '.pdf',

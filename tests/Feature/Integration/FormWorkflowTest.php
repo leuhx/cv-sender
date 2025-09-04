@@ -89,7 +89,7 @@ class FormWorkflowTest extends TestCase
             'name' => 'João Silva Santos',
             'email' => 'joao.santos@example.com',
             'position' => 'Senior Developer',
-            'education' => 'Mestrado em Engenharia de Software',
+            'education' => 'Mestrado',
             'observations' => 'Experiência com Laravel, Vue.js e Docker',
             '_method' => 'PATCH'
         ];
@@ -254,7 +254,7 @@ class FormWorkflowTest extends TestCase
             'email' => 'test@example.com',
             'phone' => '+55 11 88888-8888',
             'position' => 'Developer',
-            'education' => 'Bachelor',
+            'education' => 'Bacharelado em Ciência da Computação',
             'cv_file' => $cvFile,
         ];
 
@@ -279,7 +279,7 @@ class FormWorkflowTest extends TestCase
             'email' => 'test@example.com',
             'phone' => '+55 11 88888-8888',
             'position' => 'Senior Developer',
-            'education' => 'Bachelor',
+            'education' => 'Pós-graduação/Especialização',
             'cv_file' => $newCvFile,
             '_method' => 'PATCH'
         ];
