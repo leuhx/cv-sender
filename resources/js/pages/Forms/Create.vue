@@ -18,6 +18,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 const form = useForm({
     name: '',
     email: '',
+    phone: '',
     position: '',
     education: '',
     observations: '',
@@ -93,20 +94,38 @@ const submit = () => {
                             </div>
                         </div>
 
-                        <div class="mt-4">
-                            <label for="position" class="block text-sm font-medium text-foreground mb-2">
-                                Posição de Interesse *
-                            </label>
-                            <input
-                                id="position"
-                                v-model="form.position"
-                                type="text"
-                                required
-                                class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
-                                placeholder="Ex: Desenvolvedor Frontend, Designer UX/UI"
-                            />
-                            <div v-if="form.errors.position" class="mt-1 text-sm text-red-600">
-                                {{ form.errors.position }}
+                        <div class="grid gap-4 md:grid-cols-2 mt-4">
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-foreground mb-2">
+                                    Telefone
+                                </label>
+                                <input
+                                    id="phone"
+                                    v-model="form.phone"
+                                    type="tel"
+                                    class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
+                                    placeholder="(11) 99999-9999"
+                                />
+                                <div v-if="form.errors.phone" class="mt-1 text-sm text-red-600">
+                                    {{ form.errors.phone }}
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="position" class="block text-sm font-medium text-foreground mb-2">
+                                    Posição de Interesse *
+                                </label>
+                                <input
+                                    id="position"
+                                    v-model="form.position"
+                                    type="text"
+                                    required
+                                    class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
+                                    placeholder="Ex: Desenvolvedor Frontend, Designer UX/UI"
+                                />
+                                <div v-if="form.errors.position" class="mt-1 text-sm text-red-600">
+                                    {{ form.errors.position }}
+                                </div>
                             </div>
                         </div>
 

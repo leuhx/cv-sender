@@ -13,6 +13,7 @@ class Form extends Model
         'user_id',
         'name',
         'email',
+        'phone',
         'position',
         'education',
         'observations',

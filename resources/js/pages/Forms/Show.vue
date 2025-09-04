@@ -85,6 +85,10 @@ const formatDate = (date: string) => {
                                 <dt class="text-sm font-medium text-muted-foreground">E-mail</dt>
                                 <dd class="mt-1 text-sm text-foreground">{{ form.email }}</dd>
                             </div>
+                            <div v-if="form.phone">
+                                <dt class="text-sm font-medium text-muted-foreground">Telefone</dt>
+                                <dd class="mt-1 text-sm text-foreground">{{ form.phone }}</dd>
+                            </div>
                             <div>
                                 <dt class="text-sm font-medium text-muted-foreground">Posição de Interesse</dt>
                                 <dd class="mt-1 text-sm text-foreground">{{ form.position }}</dd>

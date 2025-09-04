@@ -57,6 +57,7 @@ const formatDate = (date: string) => {
                             <div>
                                 <div class="text-sm font-medium text-foreground">{{ form.name }}</div>
                                 <div class="text-sm text-muted-foreground">{{ form.email }}</div>
+                                <div v-if="form.phone" class="text-sm text-muted-foreground">{{ form.phone }}</div>
                             </div>
                         </td>
                         <td v-if="showUser" class="px-6 py-4 whitespace-nowrap">

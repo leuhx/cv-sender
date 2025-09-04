@@ -174,7 +174,7 @@ class AdminFormControllerTest extends TestCase
         $response = $this->actingAs($admin)->delete("/admin/forms/{$form->id}");
 
         $response->assertRedirect('/admin/forms');
-        $response->assertSessionHas('success', 'Formulário excluído com sucesso!');
+        $response->assertSessionHas('success', 'Formulário deletado com sucesso!');
         $this->assertDatabaseMissing('forms', ['id' => $form->id]);
     }
 

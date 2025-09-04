@@ -24,6 +24,22 @@ const breadcrumbs: BreadcrumbItem[] = [
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col gap-6 overflow-x-auto rounded-xl p-4">
+            <!-- Cabeçalho do Dashboard -->
+            <div class="flex items-center justify-between border-b border-border pb-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-foreground">Meus Formulários</h1>
+                    <p class="text-sm text-muted-foreground mt-1">
+                        Painel do candidato - Gerencie suas candidaturas e acompanhe o status
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 rounded-lg bg-blue-100 px-3 py-1 dark:bg-blue-900/20">
+                    <svg class="h-4 w-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-xs font-medium text-blue-700 dark:text-blue-300">Candidato</span>
+                </div>
+            </div>
+
             <!-- Cards de Estatísticas -->
             <div class="grid auto-rows-min gap-4 md:grid-cols-3">
                 <StatsCard

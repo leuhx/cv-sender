@@ -40,6 +40,7 @@ export interface Form {
     user_id: number;
     name: string;
     email: string;
+    phone: string | null;
     position: string;
     education: string;
     observations: string | null;
@@ -53,6 +54,7 @@ export interface EditForm {
     id: number;
     name: string;
     email: string;
+    phone: string | null;
     position: string;
     education: string;
     observations: string | null;

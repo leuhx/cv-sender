@@ -50,15 +50,16 @@ class FormWorkflowTest extends TestCase
         $formData = [
             'name' => 'João Silva',
             'email' => 'joao@example.com',
+            'phone' => '+55 11 99999-9999',
             'position' => 'Desenvolvedor PHP',
             'education' => 'Bacharelado em Ciência da Computação',
             'observations' => 'Experiência com Laravel e Vue.js',
-            'cv' => $cvFile,
+            'cv_file' => $cvFile,
         ];
 
         $response = $this->post('/forms', $formData);
         $response->assertRedirect('/forms');
-        $response->assertSessionHas('success', 'Formulário criado com sucesso!');
+        $response->assertSessionHas('success', 'Formulário enviado com sucesso!');
 
         // Verify form was created in database
         $form = Form::where('user_id', $applicant->id)->first();
@@ -251,9 +252,10 @@ class FormWorkflowTest extends TestCase
         $formData = [
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'phone' => '+55 11 88888-8888',
             'position' => 'Developer',
             'education' => 'Bachelor',
-            'cv' => $cvFile,
+            'cv_file' => $cvFile,
         ];
 
         $response = $this->post('/forms', $formData);
@@ -275,9 +277,10 @@ class FormWorkflowTest extends TestCase
         $updateData = [
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'phone' => '+55 11 88888-8888',
             'position' => 'Senior Developer',
             'education' => 'Bachelor',
-            'cv' => $newCvFile,
+            'cv_file' => $newCvFile,
             '_method' => 'PATCH'
         ];
 

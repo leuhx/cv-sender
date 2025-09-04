@@ -24,6 +24,7 @@ class FormTest extends TestCase
             'user_id',
             'name',
             'email',
+            'phone',
             'position',
             'education',
             'observations',
@@ -109,6 +110,7 @@ class FormTest extends TestCase
             'user_id' => $user->id,
             'name' => 'João Silva',
             'email' => 'joao@example.com',
+            'phone' => '+55 11 99999-9999',
             'position' => 'Desenvolvedor',
             'education' => 'Bacharelado em Ciência da Computação',
             'observations' => 'Experiência com Laravel e Vue.js',
@@ -120,6 +122,7 @@ class FormTest extends TestCase
         $this->assertEquals($user->id, $form->user_id);
         $this->assertEquals('João Silva', $form->name);
         $this->assertEquals('joao@example.com', $form->email);
+        $this->assertEquals('+55 11 99999-9999', $form->phone);
         $this->assertEquals('Desenvolvedor', $form->position);
         $this->assertEquals('Bacharelado em Ciência da Computação', $form->education);
         $this->assertEquals('Experiência com Laravel e Vue.js', $form->observations);
@@ -178,6 +181,7 @@ class FormTest extends TestCase
             'user_id' => $user->id,
             'name' => 'Test Name',
             'email' => 'test@example.com',
+            'phone' => '+55 11 98765-4321',
             'position' => 'Test Position',
             'education' => 'Test Education',
             'observations' => 'Test Observations',
@@ -187,6 +191,7 @@ class FormTest extends TestCase
         $this->assertEquals($user->id, $form->user_id);
         $this->assertEquals('Test Name', $form->name);
         $this->assertEquals('test@example.com', $form->email);
+        $this->assertEquals('+55 11 98765-4321', $form->phone);
         $this->assertEquals('Test Position', $form->position);
         $this->assertEquals('Test Education', $form->education);
         $this->assertEquals('Test Observations', $form->observations);

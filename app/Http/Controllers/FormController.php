@@ -41,6 +41,7 @@ class FormController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:20',
             'position' => 'required|string|max:255',
             'education' => 'required|string|max:255',
             'observations' => 'nullable|string',
@@ -57,6 +58,7 @@ class FormController extends Controller
             'user_id' => Auth::id(),
             'name' => $validated['name'],
             'email' => $validated['email'],
+            'phone' => $validated['phone'],
             'position' => $validated['position'],
             'education' => $validated['education'],
             'observations' => $validated['observations'],
@@ -113,6 +115,7 @@ class FormController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:20',
             'position' => 'required|string|max:255',
             'education' => 'required|string|max:255',
             'observations' => 'nullable|string',

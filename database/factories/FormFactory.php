@@ -30,6 +30,7 @@ class FormFactory extends Factory
             'user_id' => User::factory(),
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
+            'phone' => fake()->phoneNumber(),
             'position' => fake()->randomElement([
                 'Desenvolvedor PHP',
                 'Desenvolvedor Frontend',
