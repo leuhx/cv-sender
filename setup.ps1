@@ -51,11 +51,11 @@ if ($LASTEXITCODE -ne 0) {
 if (!(Test-Path ".env")) {
     Write-Host "⚙️ Criando arquivo .env..." -ForegroundColor Yellow
     Copy-Item ".env.example" ".env"
-    
+
     # Gerar chave da aplicação
     Write-Host "🔑 Gerando chave da aplicação..." -ForegroundColor Yellow
     & php artisan key:generate --no-interaction
-    
+
     Write-Host "✅ Arquivo .env criado com sucesso!" -ForegroundColor Green
     Write-Host "ℹ️  Por favor, configure as credenciais do banco de dados no arquivo .env" -ForegroundColor Cyan
 } else {
@@ -81,7 +81,7 @@ if ($LASTEXITCODE -ne 0) {
     Write-Host "   Você pode executar 'php artisan migrate' manualmente após configurar o banco" -ForegroundColor Yellow
 } else {
     Write-Host "✅ Migrações executadas com sucesso!" -ForegroundColor Green
-    
+
     # 6. Executar seeders (opcional)
     $seedChoice = Read-Host "🌱 Deseja criar dados de teste? (y/n)"
     if ($seedChoice -eq "y" -or $seedChoice -eq "Y") {

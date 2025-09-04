@@ -205,7 +205,7 @@ const submit = () => {
                                     {{ form.cv_file.name }}
                                 </span>
                                 <span v-else class="text-sm text-muted-foreground">
-                                    PDF, DOC ou DOCX (máx. 5MB)
+                                    PDF, DOC ou DOCX (máx. 1MB)
                                 </span>
                             </div>
                             <div v-if="form.errors.cv_file" class="mt-1 text-sm text-red-600">

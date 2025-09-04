@@ -3,12 +3,14 @@
 ## 🐳 Executar com Docker
 
 ### Pré-requisitos
+
 - Docker
 - Docker Compose
 
 ### Comandos Rápidos
 
 #### 1. Primeira Execução (Setup Completo)
+
 ```bash
 # Copiar arquivo de ambiente
 cp .env.example .env
@@ -40,6 +42,7 @@ docker-compose exec app php artisan storage:link
 ```
 
 #### 2. Uso Diário
+
 ```bash
 # Iniciar aplicação
 docker-compose up -d
@@ -55,6 +58,7 @@ docker-compose exec app bash
 ```
 
 #### 3. Desenvolvimento
+
 ```bash
 # Iniciar com Node.js para desenvolvimento
 docker-compose --profile development up -d
@@ -68,11 +72,13 @@ docker-compose exec app php artisan test
 ```
 
 ### Acesso
+
 - **Aplicação**: http://localhost:8000
 - **PostgreSQL**: localhost:5432
 - **Redis**: localhost:6379
 
 ### Troubleshooting
+
 ```bash
 # Reconstruir containers
 docker-compose down

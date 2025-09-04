@@ -59,7 +59,7 @@ class FormController extends Controller
             'position' => 'required|string|max:255',
             'education' => 'required|string|in:' . implode(',', $validEducationLevels),
             'observations' => 'nullable|string',
-            'cv_file' => 'required|file|mimes:pdf,doc,docx|max:5120', // 5MB max
+            'cv_file' => 'required|file|mimes:pdf,doc,docx|max:1024', // 1MB max
         ]);
 
         // Fazer upload do CV
@@ -147,7 +147,7 @@ class FormController extends Controller
             'position' => 'required|string|max:255',
             'education' => 'required|string|in:' . implode(',', $validEducationLevels),
             'observations' => 'nullable|string',
-            'cv_file' => 'nullable|file|mimes:pdf,doc,docx|max:5120',
+            'cv_file' => 'nullable|file|mimes:pdf,doc,docx|max:1024',
         ]);
 
         // Fazer upload do novo CV se fornecido
